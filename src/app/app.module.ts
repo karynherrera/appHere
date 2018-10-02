@@ -21,6 +21,7 @@ import { SignInWithGoogleComponent } from './login/sign-in-with-google/sign-in-w
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

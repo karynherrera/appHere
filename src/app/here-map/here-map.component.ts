@@ -29,13 +29,34 @@ export class HereMapComponent implements OnInit {
 	public height: any;
 
 	public constructor() { }
+	private ui: any;
+	private search: any;
+	public map: any;
+	public platform: any;
+	// Dado que la funcionalidad de búsqueda no se basa en la interfaz de usuario, se puede inicializar antes de que la vista esté lista, de ahí el ngOnInit
+	public ngOnInit() {
+    this.platform = new H.service.Platform({
+        'app_id': this.appId,
+        'app_code': this.appCode
+    });
+    this.search = new H.places.Search(this.platform.getPlacesService());
+}
 
-	public ngOnInit() { }
-	public ngAfterViewInit() {
-		const platform = new H.service.Platform({
-			'app_id': this.appId,
-			'app_code': this.appCode
-		});
+public ngAfterViewInit() {
+	let defaultLayers = this.platform.createDefaultLayers();
+	this.map = new H.Map(
+			this.mapElement.nativeElement,
+			defaultLayers.normal.map,
+			{
+					zoom: 10,
+					center: { lat: this.lat, lng: this.lng }
+			}
+	);
+	let behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(this.map));
+	this.ui = H.ui.UI.createDefault(this.map, defaultLayers);
+}
+	/*	public ngAfterViewInit() { // comportamiento de UI y evento
+
 		const defaultLayers = platform.createDefaultLayers();
 		let currentPosition = null;
 		const map = null;
@@ -46,13 +67,37 @@ export class HereMapComponent implements OnInit {
 			this.mapElement.nativeElement,
 			defaultLayers.normal.map,
 			{
-				zoom: 20,
+				zoom: 15,
 				center: { lat: currentPosition.coords.latitude, lng: currentPosition.coords.longitude }
 			}
 		);
 		console.log(position);
-	};
+	};*/
+	// Buscador
+	public places(query: string) {
+    this.map.removeObjects(this.map.getObjects());
+    this.search.request({ 'q': query, 'at': this.lat + ',' + this.lng }, {}, data => {
+        for(let i = 0; i < data.results.items.length; i++) {
+            this.dropMarker({ 'lat': data.results.items[i].position[0], 'lng': data.results.items[i].position[1] }, data.results.items[i]);
+        }
+    }, error => {
+        console.error(error);
+    });
 }
+// Marcadores
+private dropMarker(coordinates: any, data: any) {
+    const marker = new H.map.Marker(coordinates);
+    marker.setData('<p>' + data.title + '<br>' + data.vicinity + '</p>');
+    marker.addEventListener('tap', event => {
+        const bubble =  new H.ui.InfoBubble(event.target.getPosition(), {
+            content: event.target.getData()
+        });
+        this.ui.addBubble(bubble);
+    }, false);
+    this.map.addObject(marker);
+}
+}
+
 
 /*
 'app_id': 'eknmdJGbgJ5Rx6BQXKPv',

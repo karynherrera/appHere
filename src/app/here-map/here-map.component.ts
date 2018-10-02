@@ -42,6 +42,7 @@ export class HereMapComponent implements OnInit {
     this.search = new H.places.Search(this.platform.getPlacesService());
   }
 
+  // tslint:disable-next-line:use-life-cycle-interface
   public ngAfterViewInit() {
     const defaultLayers = this.platform.createDefaultLayers();
     this.map = new H.Map(
@@ -52,6 +53,7 @@ export class HereMapComponent implements OnInit {
         center: { lat: this.lat, lng: this.lng }
       }
     );
+    // tslint:disable-next-line:prefer-const
     let behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(this.map));
     this.ui = H.ui.UI.createDefault(this.map, defaultLayers);
   }

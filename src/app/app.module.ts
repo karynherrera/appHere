@@ -7,12 +7,16 @@ import { environment } from '../environments/environment';
 
 //importaciones firebase
 import { AngularFireModule } from '@angular/fire';
+import { SignInWithFbComponent } from './login/sign-in-with-fb/sign-in-with-fb.component';
+import { SignInWithGoogleComponent } from './login/sign-in-with-google/sign-in-with-google.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    SignInWithFbComponent,
+    SignInWithGoogleComponent
   ],
   imports: [
     BrowserModule,

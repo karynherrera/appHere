@@ -1,39 +1,59 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 declare var H: any;
 @Component({
-  selector: 'app-here-map',
-  templateUrl: './here-map.component.html',
-  styleUrls: ['./here-map.component.css']
+	selector: 'app-here-map',
+	templateUrl: './here-map.component.html',
+	styleUrls: ['./here-map.component.css']
 })
-export class HereMapComponent  implements OnInit {
+export class HereMapComponent implements OnInit {
 
-  private platform: any;
+	@ViewChild('map')
+	public mapElement: ElementRef;
 
-  @ViewChild('map')
-  public mapElement: ElementRef;
+	@Input()
+	public appId: any;
 
-  public constructor() {
-      this.platform = new H.service.Platform({
-        'app_id': 'eknmdJGbgJ5Rx6BQXKPv',
-        'app_code': 'zngzizlNjZOy3FMap46xzw'
-      });
-  }
+	@Input()
+	public appCode: any;
 
-  public ngOnInit() { }
+	@Input()
+	public lat: any;
 
-  // tslint:disable-next-line:use-life-cycle-interface
-  public ngAfterViewInit() {
-      const defaultLayers = this.platform.createDefaultLayers();
-      const map = new H.Map(
-          this.mapElement.nativeElement,
-          defaultLayers.normal.map,
-          {
-              zoom: 14,
-              center: { lat: -33.43727, lng: -70.65056 } // Aquí estamos en stgo Centro Plza de Armas
-          }
-      );
-  }
+	@Input()
+	public lng: any;
+
+	@Input()
+	public width: any;
+
+	@Input()
+	public height: any;
+
+	public constructor() { }
+
+	public ngOnInit() { }
+	public ngAfterViewInit() {
+		const platform = new H.service.Platform({
+			'app_id': this.appId,
+			'app_code': this.appCode
+		});
+		const defaultLayers = platform.createDefaultLayers();
+		let currentPosition = null;
+		const map = null;
+		// geolocalizar
+		navigator.geolocation.getCurrentPosition((position) => {
+  	currentPosition = position;
+		const map = new H.Map(
+			this.mapElement.nativeElement,
+			defaultLayers.normal.map,
+			{
+				zoom: 20,
+				center: { lat: currentPosition.coords.latitude, lng: currentPosition.coords.longitude }
+			}
+		);
+		console.log(position);
+	};
 }
+
 /*
 'app_id': 'eknmdJGbgJ5Rx6BQXKPv',
 'app_code': 'zngzizlNjZOy3FMap46xzw'

@@ -55,7 +55,7 @@ export class HereMapComponent implements OnInit {
     let behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(this.map));
     this.ui = H.ui.UI.createDefault(this.map, defaultLayers);
   }
-	/*	public ngAfterViewInit() { // comportamiento de UI y evento
+/*	public ngAfterViewInit() { // comportamiento de UI y evento
 
 		const defaultLayers = platform.createDefaultLayers();
 		let currentPosition = null;

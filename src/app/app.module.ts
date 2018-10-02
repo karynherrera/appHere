@@ -5,14 +5,16 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { environment } from '../environments/environment';
 
-//importaciones firebase
+// importaciones firebase
 import { AngularFireModule } from '@angular/fire';
+import { HereMapComponent } from './here-map/here-map.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    HereMapComponent
   ],
   imports: [
     BrowserModule,

@@ -9,13 +9,15 @@ import { environment } from '../environments/environment';
 // importaciones firebase
 import { AngularFireModule } from '@angular/fire';
 import { HereMapComponent } from './here-map/here-map.component';
+import { HereRoutingComponent } from './here-routing/here-routing.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HereMapComponent
+    HereMapComponent,
+    HereRoutingComponent
   ],
   imports: [
     BrowserModule,

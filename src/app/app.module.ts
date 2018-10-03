@@ -8,6 +8,8 @@ import { environment } from '../environments/environment';
 
 // importaciones firebase
 import { AngularFireModule } from '@angular/fire';
+import { SignInWithFbComponent } from './login/sign-in-with-fb/sign-in-with-fb.component';
+import { SignInWithGoogleComponent } from './login/sign-in-with-google/sign-in-with-google.component';
 import { HereMapComponent } from './here-map/here-map.component';
 import { HereRoutingComponent } from './here-routing/here-routing.component';
 
@@ -18,6 +20,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
   declarations: [
     AppComponent,
     LoginComponent,
+    SignInWithFbComponent,
+    SignInWithGoogleComponent,
     HereMapComponent,
     HereRoutingComponent
   ],

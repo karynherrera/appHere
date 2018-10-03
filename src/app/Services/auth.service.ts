@@ -4,6 +4,7 @@ import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { AngularFirestore, AngularFirestoreDocument,  AngularFirestoreCollection } from '@angular/fire/firestore';
+import { switchMap} from 'rxjs/operators';
 
 interface User {
   uid: string;
@@ -24,7 +25,7 @@ export class AuthService {
     private firebaseAuth: AngularFireAuth,
     private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
-    public router: Router
+    private router: Router
     ) { 
     this.user = firebaseAuth.authState;
     this.usersCollection = afs.collection<any>('test');

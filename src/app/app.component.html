@@ -1,4 +1,4 @@
-<!-- 
+
 <body>
     <mat-toolbar class='head'>HELPO</mat-toolbar>
         <div class="container-fluid row justify-align-center">
@@ -6,8 +6,7 @@
                     <input type="text" placeholder="Search places..." [(ngModel)]="query" />
                     <button (click)="map.places(query)">Search</button>
                   </div>
-                  
-                  <app-here-map #map lat="37.7397" lng="-121.4252" width="1080px" height="530px"></app-here-map>
+                  <app-here-map #map width="1080px" height="530px"></app-here-map> 
             </div>
             
             
@@ -25,5 +24,6 @@
             <app-here-routing [start]="start" [finish]="finish" width="60%" height="530px">
              
             </app-here-routing>
-</body>  -->
+</body>  
+
 <router-outlet></router-outlet>

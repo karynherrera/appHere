@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-//importacion de componentes propios
+// importacion de componentes propios
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { environment } from '../environments/environment';
@@ -13,11 +13,12 @@ import { HereMapComponent } from './here-map/here-map.component';
 import { HereRoutingComponent } from './here-routing/here-routing.component';
 import { MenuComponent } from './menu/menu.component';
 
+import { HereMapApisComponent } from './here-map-apis/here-map-apis.component';
 
 // importaciones firebase
 import { AngularFireModule } from '@angular/fire';
 
-//importaciones material angular
+// importaciones material angular
 import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
@@ -28,8 +29,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     SignInWithGoogleComponent,
     HereMapComponent,
     HereRoutingComponent,
-    MenuComponent
-    
+    MenuComponent,
+    HereMapApisComponent
   ],
   imports: [
     BrowserModule,

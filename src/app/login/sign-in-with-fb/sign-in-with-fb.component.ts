@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../Services/auth.service';
+//import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignInWithFbComponent implements OnInit {
 
-  constructor() { }
+  constructor(public auth: AuthService) { }
 
   ngOnInit() {
   }
 
+  logout() {
+    this.auth.signOut();
+  }  
 }

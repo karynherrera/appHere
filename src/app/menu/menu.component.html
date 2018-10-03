@@ -1,9 +1,9 @@
-<mat-toolbar class='head'> 
+<mat-toolbar (click)="stateBtn($event)" class='head'> 
     <H1>HELPO</H1>
   </mat-toolbar>
 <div class="row justify-align-center">
     <div class="col-6 justify-align-center">
-        <i class="fas fa-passport "></i>
+        <i (click)="stateBtn($event)" class="fas fa-passport"></i>
     </div>
     <div class="col-6 justify-align-center">
         <i class="fas fa-dollar-sign "></i>

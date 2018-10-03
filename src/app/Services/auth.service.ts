@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth} from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
-//import { Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { AngularFirestore, AngularFirestoreDocument,  AngularFirestoreCollection } from '@angular/fire/firestore';
 
@@ -18,17 +18,17 @@ interface User {
 export class AuthService {
   user: Observable<firebase.User>
   usersCollection: AngularFirestoreCollection<any>;
+  
 
   constructor(
     private firebaseAuth: AngularFireAuth,
     private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
-    //private router: Router
+    public router: Router
     ) { 
     this.user = firebaseAuth.authState;
     this.usersCollection = afs.collection<any>('test');
 
-    console.log(this.user);
   }
 
      ////// Autenticacion con metodos/////
@@ -38,7 +38,7 @@ export class AuthService {
         this.afAuth.auth
         .signInWithPopup(provider)
         .then(response => {
-          //this.router.navigate(['']); 
+          this.router.navigate(['menu']); 
           this.uploadUserToFirestore()
           resolve (response)
         }, err => {
@@ -54,7 +54,7 @@ export class AuthService {
         this.afAuth.auth
         .signInWithPopup(provider)
         .then(response => {
-          //this.router.navigate(['login/wall']);
+          this.router.navigate(['menu']);
           this.uploadUserToFirestore()
           resolve(response);
         }, err => {
@@ -67,7 +67,7 @@ export class AuthService {
   uploadUserToFirestore(){
     this.afAuth.authState.subscribe(user => {
       if(user) {
-        // console.log(user.displayName);  
+        console.log(user.displayName);  
         const data: User = {
           uid: user.uid,
           email: user.email,
@@ -82,7 +82,7 @@ export class AuthService {
   signOut() {
     this.afAuth.auth.signOut().then(() => {
       // console.log('saliste');
-      //this.router.navigate(['/']);
+      this.router.navigate(['/']);
     });
   }
 

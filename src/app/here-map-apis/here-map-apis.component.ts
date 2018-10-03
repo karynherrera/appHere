@@ -15,14 +15,14 @@ export class HereMapApisComponent implements OnInit {
   }
 
   ngOnInit() {
-    const defaultLayers = platform.createDefaultLayers();
+    //const defaultLayers = platform.createDefaultLayers();
 		let currentPosition = null;
 		const map = null;
 		// geolocalizar
 		navigator.geolocation.getCurrentPosition((position) => {
 	  currentPosition = position;
 		const map = new H.Map(
-			this.mapElement.nativeElement,
+			//this.mapElement.nativeElement,
 			defaultLayers.normal.map,
 			{
 				zoom: 15,
@@ -30,7 +30,7 @@ export class HereMapApisComponent implements OnInit {
 			}
 		);
 		console.log(position);
-	};
+	});
 }
 
 // Geolocalizar usuario en el mapa

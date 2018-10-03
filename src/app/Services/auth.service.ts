@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth} from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
-//import { Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { AngularFirestore, AngularFirestoreDocument,  AngularFirestoreCollection } from '@angular/fire/firestore';
+import { switchMap} from 'rxjs/operators';
 
 interface User {
   uid: string;
@@ -23,7 +24,7 @@ export class AuthService {
     private firebaseAuth: AngularFireAuth,
     private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
-    //private router: Router
+    private router: Router
     ) { 
     this.user = firebaseAuth.authState;
     this.usersCollection = afs.collection<any>('test');
@@ -38,6 +39,7 @@ export class AuthService {
         this.afAuth.auth
         .signInWithPopup(provider)
         .then(response => {
+          this.router.navigate(['menu']);
           //this.router.navigate(['']); 
           this.uploadUserToFirestore()
           resolve (response)
@@ -54,6 +56,7 @@ export class AuthService {
         this.afAuth.auth
         .signInWithPopup(provider)
         .then(response => {
+          this.router.navigate(['menu']);
           //this.router.navigate(['login/wall']);
           this.uploadUserToFirestore()
           resolve(response);

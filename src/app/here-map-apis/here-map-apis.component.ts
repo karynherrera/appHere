@@ -9,13 +9,15 @@ declare var H: any;
 })
 export class HereMapApisComponent implements OnInit {
   public platform: any;
-  public map: any;
+	public map: any;
+	public mapElement: any;
+	
   constructor( private hereService: HereService) {
     this.platform = this.hereService.hereServicePlatform();
   }
 
   ngOnInit() {
-    const defaultLayers = platform.createDefaultLayers();
+    const defaultLayers = this.platform.createDefaultLayers();
 		let currentPosition = null;
 		const map = null;
 		// geolocalizar
@@ -30,7 +32,7 @@ export class HereMapApisComponent implements OnInit {
 			}
 		);
 		console.log(position);
-	};
+		});
 }
 
 // Geolocalizar usuario en el mapa

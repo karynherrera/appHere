@@ -30,6 +30,7 @@ import { HereMapApisComponent } from './here-map-apis/here-map-apis.component';
 
 // importaciones material angular
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { AppRoutingModule } from './approuting.module';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     FormsModule,
     AngularFireAuthModule,
     MatToolbarModule,
-    //AppRoutingModule
+    AppRoutingModule
   ],
   providers: [AuthService,  AngularFirestore],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Component, OnInit, OnChanges, SimpleChanges, ViewChild, ElementRef, Input } from '@angular/core';
+import { HereService } from '../services/here.service';
 
 declare var H: any;
 
@@ -11,12 +12,6 @@ export class HereRoutingComponent implements OnInit, OnChanges {
 
     @ViewChild('map')
     public mapElement: ElementRef;
-
-    @Input()
-    public appId: any;
-
-    @Input()
-    public appCode: any;
 
     @Input()
     public start: any;
@@ -36,19 +31,17 @@ export class HereRoutingComponent implements OnInit, OnChanges {
     private map: any;
     private router: any;
 
-    public constructor() { }
+    public constructor(private hereService: HereService ) {
+        this.platform = this.hereService.hereServicePlatform();
+     }
 
     public ngOnInit() {
-      this.platform = new H.service.Platform({
-          'app_id': this.appId,
-          'app_code': this.appCode
-      });
       this.directions = [];
       this.router = this.platform.getRoutingService();
   }
 
     // tslint:disable-next-line:use-life-cycle-interface
-    public ngAfterViewInit() { // start y finishserán los datos que estén vinculados a los atributos del componente
+    public ngAfterViewInit() { // start y finish serán los datos que estén vinculados a los atributos del componente
       // tslint:disable-next-line:prefer-const
       let defaultLayers = this.platform.createDefaultLayers();
       this.map = new H.Map(

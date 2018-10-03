@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../Services/auth.service';
+// import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in-with-google',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignInWithGoogleComponent implements OnInit {
 
-  constructor() { }
+  constructor(public auth: AuthService) { }
 
   ngOnInit() {
   }
 
+  logout() {
+    this.auth.signOut();
+  }
 }

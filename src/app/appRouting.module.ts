@@ -1,16 +1,16 @@
 import { NgModule, Component } from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { MenuComponent } from '../app/menu/menu.component';
 
-
-const app_routes: Routes=[
+const app_routes: Routes = [
   {
     path: '', component: LoginComponent
   },
   {
-    path: 'menu', component: MenuComponent
-  },
-  {
+      path: 'menu', component: MenuComponent
+    },
+{
     path: '**', pathMatch: 'full', redirectTo: ''
   }
 ];
@@ -24,5 +24,4 @@ const app_routes: Routes=[
   ]
 })
 export class AppRoutingModule {
-
 }

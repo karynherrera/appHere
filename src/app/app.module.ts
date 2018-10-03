@@ -11,13 +11,14 @@ import { SignInWithFbComponent } from './login/sign-in-with-fb/sign-in-with-fb.c
 import { SignInWithGoogleComponent } from './login/sign-in-with-google/sign-in-with-google.component';
 import { HereMapComponent } from './here-map/here-map.component';
 import { HereRoutingComponent } from './here-routing/here-routing.component';
+import { MenuComponent } from './menu/menu.component';
+
 
 // importaciones firebase
 import { AngularFireModule } from '@angular/fire';
 
 //importaciones material angular
 import {MatToolbarModule} from '@angular/material/toolbar';
-
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     SignInWithGoogleComponent,
     HereMapComponent,
     HereRoutingComponent,
+    MenuComponent
     
   ],
   imports: [

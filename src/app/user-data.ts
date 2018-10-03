@@ -1,4 +1,4 @@
 export interface UserData {
-  start?: any,
-  finish?: any,
+  start?: any;
+  finish?: any;
 }

@@ -3,6 +3,9 @@
 }
 .container-fluid{
   background-color: azure;
+  width: 1100px;
+  display: flex;
+  position: relative;
 }
 .head{
   text-align: center;
@@ -13,4 +16,9 @@
 
 .row{
   margin: 5%;
+}
+
+app-here-map{
+  width: 1000px;
+  height: 530px;
 }

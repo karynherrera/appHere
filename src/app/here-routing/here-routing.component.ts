@@ -14,12 +14,6 @@ export class HereRoutingComponent implements OnInit, OnChanges {
     public mapElement: ElementRef;
 
     @Input()
-    public appId: any;
-
-    @Input()
-    public appCode: any;
-
-    @Input()
     public start: any;
 
     @Input()
@@ -47,7 +41,7 @@ export class HereRoutingComponent implements OnInit, OnChanges {
   }
 
     // tslint:disable-next-line:use-life-cycle-interface
-    public ngAfterViewInit() { // start y finishserán los datos que estén vinculados a los atributos del componente
+    public ngAfterViewInit() { // start y finish serán los datos que estén vinculados a los atributos del componente
       // tslint:disable-next-line:prefer-const
       let defaultLayers = this.platform.createDefaultLayers();
       this.map = new H.Map(

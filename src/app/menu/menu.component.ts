@@ -8,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class MenuComponent implements OnInit {
 
   constructor() { }
+  userClicks : Boolean = false;
 
   ngOnInit() {
   }
 
+  stateBtn(event){
+    console.log('hizo click');
+    }
 }

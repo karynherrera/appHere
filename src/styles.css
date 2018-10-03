@@ -1,3 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+ background-color: rgb(76,44,145);
+
+}
 .H_ib_body {
   width: 275px;
 }

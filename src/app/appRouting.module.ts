@@ -8,6 +8,9 @@ const app_routes: Routes=[
     path: '', component: LoginComponent
   },
   {
+    path: 'menu', component: MenuComponent
+  },
+  {
     path: '**', pathMatch: 'full', redirectTo: ''
   }
 ];

@@ -11,6 +11,8 @@ import { AngularFireModule } from '@angular/fire';
 import { HereMapComponent } from './here-map/here-map.component';
 import { HereRoutingComponent } from './here-routing/here-routing.component';
 
+//importaciones material angular
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { HereRoutingComponent } from './here-routing/here-routing.component';
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
-    FormsModule
+    FormsModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

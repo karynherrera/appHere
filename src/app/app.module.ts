@@ -10,6 +10,7 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { HereMapComponent } from './here-map/here-map.component';
 import { HereRoutingComponent } from './here-routing/here-routing.component';
+import { HereMapApisComponent } from './here-map-apis/here-map-apis.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { HereRoutingComponent } from './here-routing/here-routing.component';
     AppComponent,
     LoginComponent,
     HereMapComponent,
-    HereRoutingComponent
+    HereRoutingComponent,
+    HereMapApisComponent
   ],
   imports: [
     BrowserModule,

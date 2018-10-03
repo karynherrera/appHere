@@ -1,4 +1,5 @@
 import { Component, OnInit, OnChanges, SimpleChanges, ViewChild, ElementRef, Input } from '@angular/core';
+import { HereService } from '../services/here.service';
 
 declare var H: any;
 
@@ -36,13 +37,11 @@ export class HereRoutingComponent implements OnInit, OnChanges {
     private map: any;
     private router: any;
 
-    public constructor() { }
+    public constructor(private hereService: HereService ) {
+        this.platform = this.hereService.hereServicePlatform();
+     }
 
     public ngOnInit() {
-      this.platform = new H.service.Platform({
-          'app_id': this.appId,
-          'app_code': this.appCode
-      });
       this.directions = [];
       this.router = this.platform.getRoutingService();
   }

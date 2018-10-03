@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
+import { HereService } from '../services/here.service';
 declare var H: any;
 @Component({
   selector: 'app-here-map',
@@ -28,17 +29,15 @@ export class HereMapComponent implements OnInit {
   @Input()
   public height: any;
 
-  public constructor() { }
+  public constructor(private hereService: HereService ) {
+    this.platform = this.hereService.hereServicePlatform();
+ }
   private ui: any;
   private search: any;
   public map: any;
   public platform: any;
   // funcionalidad se inicializa antes de que la vista esté lista, de ahí el ngOnInit
   public ngOnInit() {
-    this.platform = new H.service.Platform({
-      'app_id': this.appId,
-      'app_code': this.appCode
-    });
     this.search = new H.places.Search(this.platform.getPlacesService());
   }
 

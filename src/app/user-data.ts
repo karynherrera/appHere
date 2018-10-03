@@ -1,4 +1,7 @@
 export interface UserData {
-  start?: any,
-  finish?: any,
+
+  userLat?: any;
+  userLng?: any;
+  start?: any;
+  finish?: any;
 }

@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'appHere';
+  title = 'HELPO';
   public query: string;
   public start: string;
   public finish: string;

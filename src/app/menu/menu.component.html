@@ -3,10 +3,10 @@
         <img src="../../assets/img/logo-blanco-1.png" alt="" class="logo-header">
     </header>
     <div class="row">
-        <div (click)="stateBtn($event, 'extranjeria')" class="col d-flex align-items-center justify-content-center icon-menu">
+        <div (click)="catchQuery('notaria')"class="col d-flex align-items-center justify-content-center icon-menu">
             <i class="fas fa-passport "></i>
         </div>
-        <div (click)="stateBtn($event, 'extranjeria')" class="col d-flex align-items-center justify-content-center icon-menu">
+        <div (click)="stateBtn($event, 'casa de cambio')" class="col d-flex align-items-center justify-content-center icon-menu">
             <i class="fas fa-dollar-sign "></i>
         </div>
     </div>
@@ -27,6 +27,8 @@
         </div>
     </div>
 </div>
-
+<div class="mapaHide">
+    <app-here-map></app-here-map>
+</div>
     
    

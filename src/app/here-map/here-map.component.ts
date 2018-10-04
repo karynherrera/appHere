@@ -30,17 +30,16 @@ export class HereMapComponent implements OnInit {
   currentPosition: any;
   public coordinates: any;
   public marker: any;
+
   // funcionalidad se inicializa antes de que la vista esté lista, de ahí el ngOnInit
   public ngOnInit() {
     this.search = new H.places.Search(this.platform.getPlacesService());
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((showPosition) => {
-        this.currentPosition = showPosition;
         this.lat = showPosition.coords.latitude;
         this.lng = showPosition.coords.longitude;
         this.centerPosition();
       });
-      console.log(this.currentPosition);
     }
   }
 
@@ -52,17 +51,11 @@ export class HereMapComponent implements OnInit {
       {
         zoom: 15,
         center: { lat: this.lat, lng: this.lng }
-      },
-      this.coordinates = { lat: this.lat, lng: this.lng }
+      }
     );
     // tslint:disable-next-line:prefer-const
     let behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(this.map));
     this.ui = H.ui.UI.createDefault(this.map, defaultLayers);
-    this.showMarkerUser(this.coordinates);
-  }
-
-  showMarkerUser(coordinates: any) {
-    this.hereService.displayDefaultMarker(coordinates);
   }
 
   // Buscador

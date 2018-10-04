@@ -19,8 +19,8 @@ export class HereService {
     return this.platform;
   }
 
-    displayDefaultMarker(coordinates: any) {
-      this.userMarker = new H.map.Marker(coordinates);
-      return this.map.addObject(this.userMarker);
+    displayDefaultMarker(coordinates) {
+      const userMarker = new H.map.Marker(coordinates);
+      this.map.addObject(userMarker);
   }
 }

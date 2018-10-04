@@ -1,15 +1,37 @@
-.head {
-  background: #FFFFFF;
-  height: 60px;
+/* -- Header --- */
+img.imagen {
+  width: 30px;
 }
 
-img.logo-header{
-  width: 100%;
+header {
+  background: #fff;
+  padding: 8px 0;
+  font-size: 16px;
 }
+
+header span {
+  color: #5c5c5c;
+  font-weight: bold;
+}
+
+header .logo {
+  text-align: left;
+}
+
+header .logo img {
+  height: 40px;
+}
+
+header div #profile {
+  padding-top: 10px;
+  text-align: right;
+}
+
+/* -- MENÚ NAVEGACIÓN --*/
 
 i{
-  color:white;
-  font-size: 6em; 
+  color:#4d2c91;
+  font-size: 4em; 
 }
 
 i:hover{
@@ -17,17 +39,26 @@ i:hover{
 }
 
 .icon-menu {
-  padding: 40px;
-  border: 1px solid white;
+  padding: 30px;
+  border: 1px solid #4d2c91;;
 }
 .icon-menu-two {
   /* margin-top: 20px; */
-  padding: 40px;
-  border: 1px solid white;
+  padding: 28px;
+  border: 1px solid #4d2c91;;
 }
 .icon-menu-three {
   /* margin-top: 20px; */
-  padding: 40px;
-  border: 1px solid white;
+  padding: 30px;
+  border: 1px solid #4d2c91;;
 }
 
+.option{
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #4d2c91;
+}
+
+.mapaHide{
+  
+}

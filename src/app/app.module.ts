@@ -45,7 +45,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatToolbarModule,
     AppRoutingModule
   ],
-  providers: [AuthService,  AngularFirestore],
+  providers: [AuthService,  AngularFirestore, HereMapComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

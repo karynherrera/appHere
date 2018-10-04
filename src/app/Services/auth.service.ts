@@ -18,7 +18,7 @@ interface User {
 })
 export class AuthService {
   user: Observable<firebase.User>;
-  usersCollection: AngularFirestoreCollection<any>;
+  usersCollection: AngularFirestoreCollection<User>;
 
   constructor(
     private firebaseAuth: AngularFireAuth,
@@ -29,6 +29,7 @@ export class AuthService {
     this.user = firebaseAuth.authState;
     this.usersCollection = afs.collection<any>('test');
 
+    console.log(this.user);
   }
 
      ////// Autenticacion con metodos/////
@@ -87,18 +88,4 @@ export class AuthService {
     });
   }
 
-  //     // Actualiza el estado del usuario despues de login
-  // private updateUserData(user: User) {
-  //   const userRef: AngularFirestoreDocument<User> = this.afs.doc(
-  //     `users/${user.uid}`
-  //   );
-
-  //   const data: User = {
-  //     uid: user.uid,
-  //     email: user.email,
-  //     displayName: user.displayName,
-  //     photoURL: user.photoURL
-  //   };
-  //   return userRef.set(data);
-  // }
 }

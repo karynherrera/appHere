@@ -1,0 +1,11 @@
+.head{
+  text-align: center;
+  color: rgb(76,44,145);
+  background-color:white;
+  padding-left: 35%;
+}
+
+.mapa{
+  width:100%;
+  height: 400px;
+}

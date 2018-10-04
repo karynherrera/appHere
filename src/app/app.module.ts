@@ -6,17 +6,16 @@ import { FormsModule } from '@angular/forms';
 // importacion de componentes propios
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+import { AppRoutingModule } from './appRouting.module';
 
 // importaciones firebase
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreModule} from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
-// import { AngularFireAuth } from '@angular/fire/auth';
-
+//import { AngularFireAuth } from '@angular/fire/auth';
 import { AuthService } from './Services/auth.service';
 
-// import { AppRoutingModule } from './approuting.module';
 import { SignInWithFbComponent } from './login/sign-in-with-fb/sign-in-with-fb.component';
 import { SignInWithGoogleComponent } from './login/sign-in-with-google/sign-in-with-google.component';
 
@@ -27,7 +26,6 @@ import { MenuComponent } from './menu/menu.component';
 
 // importaciones material angular
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { AppRoutingModule } from './appRouting.module';
 
 @NgModule({
   declarations: [

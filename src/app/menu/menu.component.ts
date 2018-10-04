@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+  
 
   constructor(private router: Router) { }
   userClicks : Boolean = false;

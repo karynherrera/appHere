@@ -21,6 +21,7 @@ export class HereMapComponent implements OnInit {
   public constructor(private hereService: HereService) {
     this.platform = this.hereService.hereServicePlatform();
  }
+  public userQuery: any;
   private ui: any;
   private search: any;
   public map: any;
@@ -63,6 +64,12 @@ export class HereMapComponent implements OnInit {
     this.displayCurrentPosition();
     const behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(this.map));
     this.ui = H.ui.UI.createDefault(this.map, defaultLayers);
+  }
+
+  //catch query menu
+  public catchQuery(query: string){
+    this.userQuery = query;
+    this.places(query);
   }
 
   // Buscador

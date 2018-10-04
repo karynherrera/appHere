@@ -12,11 +12,11 @@ import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreModule} from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
-//import { AngularFireAuth } from '@angular/fire/auth';
+// import { AngularFireAuth } from '@angular/fire/auth';
 
 import { AuthService } from './Services/auth.service';
 
-//import { AppRoutingModule } from './approuting.module';
+// import { AppRoutingModule } from './approuting.module';
 import { SignInWithFbComponent } from './login/sign-in-with-fb/sign-in-with-fb.component';
 import { SignInWithGoogleComponent } from './login/sign-in-with-google/sign-in-with-google.component';
 
@@ -24,9 +24,6 @@ import { HereMapComponent } from './here-map/here-map.component';
 import { HereRoutingComponent } from './here-routing/here-routing.component';
 
 import { MenuComponent } from './menu/menu.component';
-
-import { HereMapApisComponent } from './here-map-apis/here-map-apis.component';
-
 
 // importaciones material angular
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -41,7 +38,6 @@ import { AppRoutingModule } from './approuting.module';
     HereMapComponent,
     HereRoutingComponent,
     MenuComponent,
-    HereMapApisComponent
   ],
   imports: [
     BrowserModule,

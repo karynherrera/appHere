@@ -3,7 +3,7 @@ import {Routes, RouterModule} from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from '../app/menu/menu.component';
 
-const app_routes: Routes=[
+const app_routes: Routes = [
   {
     path: '', component: LoginComponent
   },
@@ -24,5 +24,4 @@ const app_routes: Routes=[
   ]
 })
 export class AppRoutingModule {
- 
 }

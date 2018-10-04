@@ -1,1 +1,11 @@
-  <div #map [style.width]="width" [style.height]="height"></div>
+<header class='head d-flex justify-content-center'> 
+  <img src="../../assets/img/logo-blanco-1.png" alt="" class="logo-header">
+</header>
+<div class="container-fluid row justify-align-center">
+  <div style="padding: 10px 0">
+      <input type="text" placeholder="Search places..." [(ngModel)]="query" />
+      <button (click)="map.places(query)">Search</button>
+    </div>
+</div> 
+<div class="mapa" #map ></div> 
+

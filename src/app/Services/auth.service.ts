@@ -18,8 +18,7 @@ interface User {
 })
 export class AuthService {
   user: Observable<firebase.User>;
-  usersCollection: AngularFirestoreCollection<any>;
-  
+  usersCollection: AngularFirestoreCollection<User>;
 
   constructor(
     private firebaseAuth: AngularFireAuth,
@@ -30,6 +29,7 @@ export class AuthService {
     this.user = firebaseAuth.authState;
     this.usersCollection = afs.collection<any>('test');
 
+    console.log(this.user);
   }
 
      ////// Autenticacion con metodos/////

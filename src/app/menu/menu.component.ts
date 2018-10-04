@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../Services/auth.service'
 import { AngularFireAuth} from '@angular/fire/auth';
 
 
+import {HereMapComponent} from '../here-map/here-map.component';
+
+declare var H: any;
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -11,6 +14,8 @@ import { AngularFireAuth} from '@angular/fire/auth';
 })
 
 export class MenuComponent implements OnInit {
+  @ViewChild(HereMapComponent) map:HereMapComponent;
+  public mapElement: ElementRef;
   
  
   constructor(
@@ -18,12 +23,12 @@ export class MenuComponent implements OnInit {
     public auth: AuthService,
     public afAuth: AngularFireAuth
     ) { 
-
-
+        this.query="";
       };
-  userClicks : Boolean = false;
+    userClicks : Boolean = false;
     photo: string;
     name: string;
+    query : string;
 
   ngOnInit() {
     this.afAuth.authState.subscribe(user => {
@@ -37,7 +42,8 @@ export class MenuComponent implements OnInit {
   }
 
   stateBtn(event, name: string){
-    console.log('hizo click'+name);
-    this.router.navigate(['mapa']);
+    console.log('hizo click '+name);
+    //this.map.catchQuery(name);
+    //this.router.navigate(['mapa']);
     }
 }

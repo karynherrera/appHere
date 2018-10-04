@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 body{
- background-color: rgb(76,44,145);
-
+  font-family: 'Niramit', sans-serif;
+  font-size: 16px;
+  height: 100%;
 }
 .H_ib_body {
   width: 275px;

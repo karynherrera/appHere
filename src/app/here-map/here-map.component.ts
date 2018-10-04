@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Output } from '@angular/core';
 import { HereService } from '../services/here.service';
 declare var H: any;
 @Component({
@@ -7,20 +7,20 @@ declare var H: any;
   styleUrls: ['./here-map.component.css']
 })
 export class HereMapComponent implements OnInit {
-
+  @Output()
+  //@ouput() dataShared:boolean = false;
   @ViewChild('map')
   public mapElement: ElementRef;
 
-  @Input()
-  public width: any;
-
-  @Input()
-  public height: any;
   markerUser: any;
-
+  public query: string;
   public constructor(private hereService: HereService) {
+    this.query = '';
+        this.start = '37.7397,-121.4252'; // se vincularán a nuestro formulario start y finish
+        this.finish = '37.6819,-121.7680';
     this.platform = this.hereService.hereServicePlatform();
  }
+
   public userQuery: any;
   private ui: any;
   private search: any;
@@ -67,9 +67,10 @@ export class HereMapComponent implements OnInit {
   }
 
   //catch query menu
-  public catchQuery(query: string){
-    this.userQuery = query;
-    this.places(query);
+  public catchQuery(resp: string){
+    //this.userQuery = resp;
+    console.log(resp);
+    //this.places(query);
   }
 
   // Buscador

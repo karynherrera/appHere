@@ -13,7 +13,7 @@ import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreModule} from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
-//import { AngularFireAuth } from '@angular/fire/auth';
+// import { AngularFireAuth } from '@angular/fire/auth';
 import { AuthService } from './Services/auth.service';
 
 import { SignInWithFbComponent } from './login/sign-in-with-fb/sign-in-with-fb.component';

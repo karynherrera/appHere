@@ -11,14 +11,12 @@ export class HereMapComponent implements OnInit {
   @ViewChild('map')
   public mapElement: ElementRef;
 
-  @Input()
-  public width: any;
-
-  @Input()
-  public height: any;
   markerUser: any;
-
+  public query: string;
   public constructor(private hereService: HereService) {
+    this.query = '';
+        this.start = '37.7397,-121.4252'; // se vincularán a nuestro formulario start y finish
+        this.finish = '37.6819,-121.7680';
     this.platform = this.hereService.hereServicePlatform();
  }
   private ui: any;

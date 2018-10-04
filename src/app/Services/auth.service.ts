@@ -19,7 +19,6 @@ interface User {
 export class AuthService {
   user: Observable<firebase.User>;
   usersCollection: AngularFirestoreCollection<any>;
-  
 
   constructor(
     private firebaseAuth: AngularFireAuth,

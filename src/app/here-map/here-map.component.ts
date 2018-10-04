@@ -49,6 +49,7 @@ export class HereMapComponent implements OnInit {
   }
 
   centerPosition() {
+    console.log(this.platform);
     const defaultLayers = this.platform.createDefaultLayers();
     this.map = new H.Map(
       this.mapElement.nativeElement,

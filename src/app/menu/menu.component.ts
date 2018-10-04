@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+  
 
   constructor(private router: Router) { }
   userClicks : Boolean = false;
@@ -13,8 +14,8 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
   }
 
-  stateBtn(event){
-    console.log('hizo click');
-    this.router.navigate(['']);
+  stateBtn(event, name: string){
+    console.log('hizo click'+name);
+    this.router.navigate(['mapa']);
     }
 }

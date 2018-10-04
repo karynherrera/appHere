@@ -12,6 +12,10 @@ i{
   font-size: 6em; 
 }
 
+i:hover{
+  color: rgb(169, 238, 243); 
+}
+
 .icon-menu {
   padding: 40px;
   border: 1px solid white;

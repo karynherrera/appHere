@@ -11,13 +11,13 @@ interface User {
   email: string;
   photoURL?: string;
   displayName?: string;
- } 
+ }
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  user: Observable<firebase.User>
+  user: Observable<firebase.User>;
   usersCollection: AngularFirestoreCollection<any>;
 
   constructor(
@@ -25,7 +25,7 @@ export class AuthService {
     private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
     private router: Router
-    ) { 
+    ) {
     this.user = firebaseAuth.authState;
     this.usersCollection = afs.collection<any>('test');
 
@@ -34,15 +34,16 @@ export class AuthService {
 
      ////// Autenticacion con metodos/////
      googleLogin() {
-      new Promise<any>((resolve, reject)=>{
+      // tslint:disable-next-line:no-unused-expression
+      new Promise<any>((resolve, reject) => {
         let provider = new firebase.auth.GoogleAuthProvider();
         this.afAuth.auth
         .signInWithPopup(provider)
         .then(response => {
           this.router.navigate(['menu']);
-          //this.router.navigate(['']); 
-          this.uploadUserToFirestore()
-          resolve (response)
+          // this.router.navigate(['']);
+          this.uploadUserToFirestore();
+          resolve (response);
         }, err => {
           console.log(err);
           reject(err);
@@ -57,35 +58,35 @@ export class AuthService {
         .signInWithPopup(provider)
         .then(response => {
           this.router.navigate(['menu']);
-          //this.router.navigate(['login/wall']);
-          this.uploadUserToFirestore()
+          // this.router.navigate(['login/wall']);
+          this.uploadUserToFirestore();
           resolve(response);
         }, err => {
           console.log(err);
           reject(err);
-        })
-      })
+        });
+      });
     }
-      // crear coleccion 
-  uploadUserToFirestore(){
+      // crear coleccion
+  uploadUserToFirestore() {
     this.afAuth.authState.subscribe(user => {
-      if(user) {
-        // console.log(user.displayName);  
+      if (user) {
+        // console.log(user.displayName);
         const data: User = {
           uid: user.uid,
           email: user.email,
           displayName: user.displayName,
-          photoURL: user.photoURL 
-      }
-      return this.afs.collection(`users`).doc(`${user.uid}`).set(data);  
-    };
+          photoURL: user.photoURL
+      };
+      return this.afs.collection(`users`).doc(`${user.uid}`).set(data);
+    }
     });
-  }; 
+  }
 
   signOut() {
     this.afAuth.auth.signOut().then(() => {
       // console.log('saliste');
-      //this.router.navigate(['/']);
+      // this.router.navigate(['/']);
     });
   }
 
@@ -99,9 +100,8 @@ export class AuthService {
   //     uid: user.uid,
   //     email: user.email,
   //     displayName: user.displayName,
-  //     photoURL: user.photoURL 
+  //     photoURL: user.photoURL
   //   };
   //   return userRef.set(data);
   // }
-   
 }

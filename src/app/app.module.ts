@@ -27,7 +27,7 @@ import { MenuComponent } from './menu/menu.component';
 
 // importaciones material angular
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { AppRoutingModule } from './approuting.module';
+import { AppRoutingModule } from './appRouting.module';
 
 @NgModule({
   declarations: [

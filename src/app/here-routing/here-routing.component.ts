@@ -63,7 +63,7 @@ export class HereRoutingComponent implements OnInit, OnChanges {
 public route(start: any, finish: any) { // Usando la API de enrutamiento HERE para navegación
   // tslint:disable-next-line:prefer-const
   let params = {
-      'mode': 'fastest;car',
+      'mode': 'shortest;publicTransport',
       'waypoint0': 'geo!' + this.start,
       'waypoint1': 'geo!' + this.finish,
       'representation': 'display'

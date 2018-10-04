@@ -31,6 +31,11 @@ export class HereMapComponent implements OnInit {
   public coordinates: any;
   public marker: any;
 
+  public start: any;
+  public finish: any;
+  public directions: any;
+  private router: any;
+
   // funcionalidad se inicializa antes de que la vista esté lista, de ahí el ngOnInit
   public ngOnInit() {
     this.search = new H.places.Search(this.platform.getPlacesService());
@@ -98,6 +103,11 @@ export class HereMapComponent implements OnInit {
       });
     this.map.addObject(marker);
   }
+// Routing
+
+
+
+
 
 }
 

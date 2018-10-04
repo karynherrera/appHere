@@ -4,7 +4,7 @@ import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { AngularFirestore, AngularFirestoreDocument,  AngularFirestoreCollection } from '@angular/fire/firestore';
-import { switchMap} from 'rxjs/operators';
+
 
 interface User {
   uid: string;
@@ -19,6 +19,7 @@ interface User {
 export class AuthService {
   user: Observable<firebase.User>;
   usersCollection: AngularFirestoreCollection<any>;
+  
 
   constructor(
     private firebaseAuth: AngularFireAuth,
@@ -29,7 +30,6 @@ export class AuthService {
     this.user = firebaseAuth.authState;
     this.usersCollection = afs.collection<any>('test');
 
-    console.log(this.user);
   }
 
      ////// Autenticacion con metodos/////
@@ -40,10 +40,9 @@ export class AuthService {
         this.afAuth.auth
         .signInWithPopup(provider)
         .then(response => {
-          this.router.navigate(['menu']);
-          // this.router.navigate(['']);
-          this.uploadUserToFirestore();
-          resolve (response);
+          this.router.navigate(['menu']); 
+          this.uploadUserToFirestore()
+          resolve (response)
         }, err => {
           console.log(err);
           reject(err);
@@ -58,8 +57,7 @@ export class AuthService {
         .signInWithPopup(provider)
         .then(response => {
           this.router.navigate(['menu']);
-          // this.router.navigate(['login/wall']);
-          this.uploadUserToFirestore();
+          this.uploadUserToFirestore()
           resolve(response);
         }, err => {
           console.log(err);
@@ -70,8 +68,8 @@ export class AuthService {
       // crear coleccion
   uploadUserToFirestore() {
     this.afAuth.authState.subscribe(user => {
-      if (user) {
-        // console.log(user.displayName);
+      if(user) {
+        console.log(user.displayName);  
         const data: User = {
           uid: user.uid,
           email: user.email,
@@ -86,7 +84,7 @@ export class AuthService {
   signOut() {
     this.afAuth.auth.signOut().then(() => {
       // console.log('saliste');
-      // this.router.navigate(['/']);
+      this.router.navigate(['/']);
     });
   }
 

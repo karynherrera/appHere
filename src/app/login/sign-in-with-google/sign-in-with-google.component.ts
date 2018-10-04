@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../Services/auth.service';
 
-
 @Component({
   selector: 'app-sign-in-with-google',
   templateUrl: './sign-in-with-google.component.html',
@@ -16,5 +15,5 @@ export class SignInWithGoogleComponent implements OnInit {
 
   logout() {
     this.auth.signOut();
-  }  
+  }
 }

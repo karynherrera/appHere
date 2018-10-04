@@ -24,12 +24,8 @@ import { HereRoutingComponent } from './here-routing/here-routing.component';
 
 import { MenuComponent } from './menu/menu.component';
 
-import { HereMapApisComponent } from './here-map-apis/here-map-apis.component';
-
-
 // importaciones material angular
 import {MatToolbarModule} from '@angular/material/toolbar';
-
 
 @NgModule({
   declarations: [
@@ -40,7 +36,6 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     HereMapComponent,
     HereRoutingComponent,
     MenuComponent,
-    HereMapApisComponent
   ],
   imports: [
     BrowserModule,

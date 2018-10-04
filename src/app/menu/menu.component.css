@@ -1,3 +1,15 @@
+/* -- Header --- */
+header {
+  background: #fff;
+  padding: 8px 0;
+  font-size: 16px;
+}
+
+header span {
+  color: #5c5c5c;
+  font-weight: bold;
+}
+
 .head {
   background: #FFFFFF;
   height: 60px;
@@ -30,4 +42,5 @@ i:hover{
   padding: 40px;
   border: 1px solid white;
 }
+
 

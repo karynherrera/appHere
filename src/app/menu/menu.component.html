@@ -1,10 +1,21 @@
-<div class="container">
-    <header class='head d-flex justify-content-center'> 
-        <img src="../../assets/img/logo-blanco-1.png" alt="" class="logo-header">
-    </header>
+<header class="container">
+    <div class='head d-flex justify-content-center'> 
+        <div class="row" class="profile">
+            <div class="col-4 col-md-3 logo">
+                <img (click)="stateBtn($event)" src="../../assets/img/logo-blanco-1.png" alt="" class="logo-header">
+            </div>
+            <div class="col col-md-8">
+                <span class="displayName"></span>
+                <!--Cargar imagen del usuario-->
+                <img class="imagen">
+            </div>
+        </div>
+    </div>
+</header>
+<nav>
     <div class="row">
         <div class="col d-flex align-items-center justify-content-center icon-menu">
-            <i class="fas fa-passport "></i>
+        <i (click)="stateBtn($event)" class="fas fa-passport "></i>
         </div>
         <div class="col d-flex align-items-center justify-content-center icon-menu">
             <i class="fas fa-dollar-sign "></i>
@@ -25,8 +36,10 @@
         <div class="col d-flex align-items-center justify-content-center icon-menu-three">
             <i class="fas fa-file-alt"></i>
         </div>
-    </div>
-</div>
+    </div> 
+</nav>
+  
+
 
     
    

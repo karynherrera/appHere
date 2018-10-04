@@ -11,7 +11,7 @@ export class AppComponent {
   public start: string;
   public finish: string;
     public constructor() {
-        this.query = 'starbucks';
+        this.query = '';
         this.start = '37.7397,-121.4252'; // se vincularán a nuestro formulario start y finish
         this.finish = '37.6819,-121.7680';
     }

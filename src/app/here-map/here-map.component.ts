@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 import { HereService } from '../services/here.service';
+import { queryDef } from '@angular/core/src/view';
 declare var H: any;
 @Component({
   selector: 'app-here-map',
@@ -7,7 +8,7 @@ declare var H: any;
   styleUrls: ['./here-map.component.css']
 })
 export class HereMapComponent implements OnInit {
- 
+  @Output()
   //@ouput() dataShared:boolean = false;
   @ViewChild('map')
   public mapElement: ElementRef;
@@ -21,7 +22,7 @@ export class HereMapComponent implements OnInit {
     this.platform = this.hereService.hereServicePlatform();
  }
 
-  public userQuery: any;
+  public userQuery: string;
   private ui: any;
   private search: any;
   public map: any;
@@ -47,6 +48,7 @@ export class HereMapComponent implements OnInit {
         this.centerPosition();
       });
     }
+    console.log('aqui '+this.userQuery);
   }
 
   centerPosition() {
@@ -67,10 +69,10 @@ export class HereMapComponent implements OnInit {
   }
 
   //catch query menu
-  public catchQuery(value){
-    //this.userQuery = resp;
-    console.log('holi' +value);
-    this.places(value);
+  public catchQuery(query:string){
+    //this.userQuery = value;
+    //console.log('holi ' +value);
+    this.places(query);
     //this.places(query);
    // return this.queryReceptor.emit(resp);
   }

@@ -14,37 +14,36 @@
 </header>
 <nav class="container">
     <div class="row">
-        <div (click)="catchQuery('notaria')"class="col d-flex align-items-center justify-content-center icon-menu">
-            <i class="fas fa-passport "></i>
+        <div (click)="directorio($event,'migracion')"
+         class="col d-flex align-items-center justify-content-center icon-menu">
+            <i id="hospital" class="fas fa-passport "></i>
         </div>
-        <div (click)="stateBtn($event, 'casa de cambio')" class="col d-flex align-items-center justify-content-center icon-menu">
+        <div (click)="directorio($event,'casa de cambio')" class="col d-flex align-items-center justify-content-center icon-menu">
             <i class="fas fa-dollar-sign "></i>
         </div>
     </div>
     <div class="row">
-        <div (click)="stateBtn($event, 'transporte')" class="col d-flex align-items-center justify-content-center icon-menu-two">
+        <div (click)=" directorio($event,'transporte')" class="col d-flex align-items-center justify-content-center icon-menu-two">
             <i class="fas fa-bus-alt"></i>
         </div>
-        <div (click)="stateBtn($event, 'sapu')" class="col d-flex align-items-center justify-content-center icon-menu-two">
+        <div (click)="directorio($event,'hospital')" class="col d-flex align-items-center justify-content-center icon-menu-two">
             <i class="fas fa-hospital-alt"></i>
         </div>
     </div>
     <div class="row">
-        <div (click)="stateBtn($event, 'bolsaTrabajo')" class="col d-flex align-items-center justify-content-center icon-menu-three">
+        <div (click)="directorio($event,'bolsaTrabajo')" class="col d-flex align-items-center justify-content-center icon-menu-three">
             <i class="fas fa-briefcase"></i>  
         </div>
-        <div (click)="stateBtn($event, 'notaria')" class="col d-flex align-items-center justify-content-center icon-menu-three">
+        <div (click)="directorio($event,'notaria')" class="col d-flex align-items-center justify-content-center icon-menu-three">
             <i class="fas fa-file-alt"></i>
         </div>
 
     </div>
     
-    <div class="mapaHide">
-    <app-here-map></app-here-map>
-    </div>
-
-    
 </nav>
+<div class="mapaHide">
+    <app-here-map></app-here-map>
+</div>
   
 
     

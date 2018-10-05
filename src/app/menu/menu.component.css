@@ -104,15 +104,11 @@ i{
 .title-menu {
   margin-left: 12px;
   font-size: 2em;
-  color: #4d2c91;
+  color: #FFFFFF;
   font-weight: 600;
-}
-
-.title-menu:hover{
-  color: white
 }
 
 /*--MAPA --*/
 .mapaHide{
-  
+  display: none;
 }

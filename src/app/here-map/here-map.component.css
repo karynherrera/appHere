@@ -1,9 +1,42 @@
-.head{
-  text-align: center;
-  color: rgb(76,44,145);
-  background-color:white;
-  padding-left: 35%;
+/* -- Header --- */
+img.imagen {
+  width: 30px;
+  border-radius: 50%;
 }
+
+header {
+  background: #fff;
+  padding: 8px 0;
+  font-size: 16px;
+}
+
+header span {
+  color: #5c5c5c;
+  font-weight: bold;
+}
+
+header .logo {
+  text-align: left;
+}
+
+header .logo img {
+  height: 40px;
+}
+
+header div #profile {
+  padding-top: 10px;
+  text-align: right;
+}
+
+span.displayName {
+  margin-right: 5px;
+}
+
+.info {
+  padding-top: 6px;
+}
+
+/* -- MAPAS --*/
 
 .mapa{
   width:100%;

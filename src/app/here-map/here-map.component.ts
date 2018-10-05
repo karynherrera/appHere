@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 import { HereService } from '../services/here.service';
-import { queryDef } from '@angular/core/src/view';
+import { AuthService } from '../Services/auth.service';
+import { AngularFireAuth } from '@angular/fire/auth';
 declare var H: any;
 @Component({
   selector: 'app-here-map',
@@ -15,7 +16,8 @@ export class HereMapComponent implements OnInit {
 
   markerUser: any;
   public query: string;
-  public constructor(private hereService: HereService) {
+  public constructor(private hereService: HereService, public auth: AuthService,
+  public afAuth: AngularFireAuth) {
     this.query = '';
         this.start = '37.7397,-121.4252'; // se vincularán a nuestro formulario start y finish
         this.finish = '37.6819,-121.7680';
@@ -37,6 +39,9 @@ export class HereMapComponent implements OnInit {
   public finish: any;
   public directions: any;
   private router: any;
+  
+  photo: string;
+  name: string;
 
   // funcionalidad se inicializa antes de que la vista esté lista, de ahí el ngOnInit
   public ngOnInit() {
@@ -48,7 +53,14 @@ export class HereMapComponent implements OnInit {
         this.centerPosition();
       });
     }
-    console.log('aqui '+this.userQuery);
+    //console.log('aqui '+this.userQuery);
+
+    this.afAuth.authState.subscribe(user => {
+      if(user){
+        this.name = user.displayName
+        this.photo = user.photoURL
+      }
+    })
   }
 
   centerPosition() {

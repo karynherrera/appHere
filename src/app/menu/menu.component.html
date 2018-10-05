@@ -4,7 +4,7 @@
             <div class="col-4 col-md-3 logo">
                 <img (click)="stateBtn($event)" src="../../assets/img/logo-blanco-1.png" alt="" class="logo-header">
             </div>
-            <div class="col col-md-8">
+            <div class="col col-md-8 info">
                 <span class="displayName">{{ name }}</span>
                 <!--Cargar imagen del usuario-->
                 <img class="imagen" src="{{photo}}">
@@ -15,29 +15,55 @@
 <nav class="container">
     <div class="row">
         <div (click)="directorio($event,'migracion')"
-         class="col d-flex align-items-center justify-content-center icon-menu">
+        class="col d-flex align-items-center justify-content-center icon-menu btn">
+            <div class="row">
             <i id="hospital" class="fas fa-passport "></i>
+            <span class="d-flex align-items-center title-menu">Extranjeria</span>
+            </div>
         </div>
-        <div (click)="directorio($event,'casa de cambio')" class="col d-flex align-items-center justify-content-center icon-menu">
-            <i class="fas fa-dollar-sign "></i>
+        <div (click)="directorio($event,'casa de cambio')" class="col d-flex align-items-center justify-content-center icon-menu-one btn">
+            <div class="row">
+                <i class="fas fa-dollar-sign "></i>
+                <span class="d-flex align-items-center title-menu">Casas de Cambio</span>
+            </div>
         </div>
     </div>
+      
     <div class="row">
         <div (click)=" directorio($event,'transporte')" class="col d-flex align-items-center justify-content-center icon-menu-two">
-            <i class="fas fa-bus-alt"></i>
-        </div>
-        <div (click)="directorio($event,'hospital')" class="col d-flex align-items-center justify-content-center icon-menu-two">
-            <i class="fas fa-hospital-alt"></i>
+            <div class="row">
+                <i class="fas fa-bus-alt"></i>
+                <span class="d-flex align-items-center title-menu">Transporte</span>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div (click)="directorio($event,'bolsaTrabajo')" class="col d-flex align-items-center justify-content-center icon-menu-three">
-            <i class="fas fa-briefcase"></i>  
-        </div>
-        <div (click)="directorio($event,'notaria')" class="col d-flex align-items-center justify-content-center icon-menu-three">
-            <i class="fas fa-file-alt"></i>
-        </div>
 
+    <div class="row">
+        <div (click)="directorio($event, 'sapu')" class="col d-flex align-items-center justify-content-center icon-menu-three">
+            <div class="row">
+                <i class="fas fa-hospital-alt"></i>
+                <span class="d-flex align-items-center title-menu">Hospitales</span>
+            </div>
+        </div>
+    </div>
+        
+   
+    <div class="row">
+        <div (click)="directorio($event, 'bolsaTrabajo')" class="col d-flex align-items-center justify-content-center icon-menu-four">
+            <div class="row">
+                <i class="fas fa-briefcase"></i>  
+                <span class="d-flex align-items-center title-menu">Bolsa de Empleos</span>
+            </div> 
+        </div>
+    </div>
+
+    <div class="row">
+        <div (click)="directorio($event, 'notaria')" class="col d-flex align-items-center justify-content-center icon-menu-five">
+            <div class="row">
+                <i class="fas fa-file-alt"></i>
+                <span class="d-flex align-items-center title-menu">Notarias</span>
+            </div>
+        </div>
     </div>
     
 </nav>

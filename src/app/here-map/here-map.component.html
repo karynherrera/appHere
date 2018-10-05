@@ -1,5 +1,16 @@
-<header class='head d-flex justify-content-center'> 
-  <img src="../../assets/img/logo-blanco-1.png" alt="" class="logo-header">
+<header>
+    <div class="container"> 
+        <div class="row" id="profile">
+            <div class="col-4 col-md-3 logo">
+                <img (click)="stateBtn($event)" src="../../assets/img/logo-blanco-1.png" alt="" class="logo-header">
+            </div>
+            <div class="col col-md-8 info">
+                <span class="displayName">{{ name }}</span>
+                <!--Cargar imagen del usuario-->
+                <img class="imagen" src="{{photo}}">
+            </div>
+        </div>
+    </div>
 </header>
 
 <div style="padding: 10px 0">

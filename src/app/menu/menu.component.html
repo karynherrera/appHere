@@ -18,53 +18,47 @@
 <nav class="container">
     <div class="row">
         <div (click)="directorio($event,'migracion')"
-        class="col d-flex align-items-center justify-content-center icon-menu btn">
-            <div class="row">
-            <i id="hospital" class="fas fa-passport "></i>
-            <span class="d-flex align-items-center title-menu">Extranjeria</span>
+        class="col d-flex align-items-center justify-content-left icon-menu btn">
+            <div class="row d-flex justify-content-center">
+                <i id="hospital" class="fas fa-passport icon"></i>
+                <span class="title-menu">Oficinas Extranjeria <br> / Immigration office</span>
             </div>
         </div>
-        <div (click)="directorio($event,'casa de cambio')" class="col d-flex align-items-center justify-content-center icon-menu-one btn">
-            <div class="row">
-                <i class="fas fa-dollar-sign "></i>
-                <span class="d-flex align-items-center title-menu">Casas de Cambio</span>
+        <div (click)="directorio($event,'casa de cambio')" class="col d-flex align-items-center justify-content-left icon-menu-one btn">
+            <div class="row d-flex justify-content-center">
+                <i class="fas fa-dollar-sign icon"></i>
+                <span class="d-flex align-items-center title-menu">Casa de cambios <br> / Money exchancge </span>
             </div>
         </div>
     </div>
       
     <div class="row">
-        <div (click)=" directorio($event,'transporte')" class="col d-flex align-items-center justify-content-center icon-menu-two">
-            <div class="row">
-                <i class="fas fa-bus-alt"></i>
-                <span class="d-flex align-items-center title-menu">Transporte</span>
+        <div (click)=" directorio($event,'transporte')" class="col d-flex align-items-center justify-content-left icon-menu-two">
+            <div class="row d-flex justify-content-center">
+                <i class="fas fa-bus-alt icon"></i>
+                <span class="d-flex align-items-center title-menu-2">Transporte <br> / Public transport</span>
             </div>
+        </div>
+        <div (click)="directorio($event, 'sapu')" class="col d-flex align-items-center justify-content-left icon-menu-three">
+                <div class="row d-flex justify-content-center">
+                    <i class="fas fa-hospital-alt icon"></i>
+                    <span class="d-flex align-items-center title-menu">Hospitales & SAPU</span>
+                </div>
         </div>
     </div>
 
+
     <div class="row">
-        <div (click)="directorio($event, 'sapu')" class="col d-flex align-items-center justify-content-center icon-menu-three">
-            <div class="row">
-                <i class="fas fa-hospital-alt"></i>
-                <span class="d-flex align-items-center title-menu">Hospitales</span>
-            </div>
-        </div>
-    </div>
-        
-   
-    <div class="row">
-        <div (click)="directorio($event, 'bolsaTrabajo')" class="col d-flex align-items-center justify-content-center icon-menu-four">
-            <div class="row">
-                <i class="fas fa-briefcase"></i>  
-                <span class="d-flex align-items-center title-menu">Bolsa de Empleos</span>
+        <div (click)="directorio($event, 'bolsaTrabajo')" class="col d-flex align-items-center justify-content-left icon-menu-four">
+            <div class="row d-flex justify-content-center">
+                <i class="fas fa-briefcase icon"></i>  
+                <span class="d-flex align-items-center title-menu">Bolsa de Empleos - Jobs</span>
             </div> 
         </div>
-    </div>
-
-    <div class="row">
-        <div (click)="directorio($event, 'notaria')" class="col d-flex align-items-center justify-content-center icon-menu-five">
-            <div class="row">
-                <i class="fas fa-file-alt"></i>
-                <span class="d-flex align-items-center title-menu">Notarias</span>
+        <div (click)="directorio($event, 'notaria')" class="col d-flex align-items-center justify-content-left icon-menu-five">
+            <div class="row d-flex justify-content-center">
+                <i class="fas fa-file-alt icon"></i>
+                <span class="d-flex align-items-center title-menu">Notarias - Public notary</span>
             </div>
         </div>
     </div>

@@ -7,17 +7,21 @@
             </div>
             <div class="col col-md-8 info">
                 <span class="displayName">{{ name }}</span>
-                <!--Cargar imagen del usuario-->
+                Cargar imagen del usuario-->
              <!--   <img class="imagen" src="{{photo}}">
             </div>
         </div>
     </div>
 </header> -->
 
-<div style="padding: 10px 0">
-    <input type="text" placeholder="Search places..." [(ngModel)]="query" />
-    <button (click)="places(query)">Search</button>
+<div class="container">
+  <div class="row">
+    <div class="col search d-flex justify-content-center">
+        <input class="" type="text" placeholder="Search places..." [(ngModel)]="query" /> 
+        <button (click)="places(query)">Search</button>
+    </div>
   </div>
+</div>
 
 <div class="mapa" #map ></div> 
 <!--

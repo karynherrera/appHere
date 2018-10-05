@@ -11,7 +11,7 @@ import { AppRoutingModule } from './appRouting.module';
 // importaciones firebase
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFirestore, AngularFirestoreModule} from '@angular/fire/firestore';
+import { AngularFirestore} from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
 // import { AngularFireAuth } from '@angular/fire/auth';
 import { AuthService } from './Services/auth.service';
@@ -26,6 +26,7 @@ import { MenuComponent } from './menu/menu.component';
 
 // importaciones material angular
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { HereService } from './Services/here.service';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatToolbarModule,
     AppRoutingModule
   ],
-  providers: [AuthService,  AngularFirestore, HereMapComponent],
+  providers: [AuthService,  AngularFirestore, HereMapComponent, HereService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

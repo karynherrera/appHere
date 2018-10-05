@@ -12,7 +12,8 @@ export class HereService {
   constructor() {
     this.platform = new H.service.Platform({
       'app_id': 'eknmdJGbgJ5Rx6BQXKPv',
-      'app_code': 'zngzizlNjZOy3FMap46xzw'
+      'app_code': 'zngzizlNjZOy3FMap46xzw',
+      useHTTS: true,
     });
   }
   hereServicePlatform() {

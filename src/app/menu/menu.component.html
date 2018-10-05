@@ -14,15 +14,14 @@
 </header>
 <nav class="container">
     <div class="row">
-        <div (click)="stateBtn($event, 'extranjeria')"  class="col d-flex align-items-center justify-content-center icon-menu btn">
+        <div (click)="directorio($event,'migracion')"
+        class="col d-flex align-items-center justify-content-center icon-menu btn">
             <div class="row">
-                <i (click)="stateBtn($event)" class="fas fa-passport "></i>
-                <span class="d-flex align-items-center title-menu">Extranjeria</span>
+            <i id="hospital" class="fas fa-passport "></i>
+            <span class="d-flex align-items-center title-menu">Extranjeria</span>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div (click)="stateBtn($event, 'casa de cambio')" class="col d-flex align-items-center justify-content-center icon-menu-one btn">
+        <div (click)="directorio($event,'casa de cambio')" class="col d-flex align-items-center justify-content-center icon-menu-one btn">
             <div class="row">
                 <i class="fas fa-dollar-sign "></i>
                 <span class="d-flex align-items-center title-menu">Casas de Cambio</span>
@@ -31,7 +30,7 @@
     </div>
       
     <div class="row">
-        <div (click)="stateBtn($event, 'transporte')" class="col d-flex align-items-center justify-content-center icon-menu-two">
+        <div (click)=" directorio($event,'transporte')" class="col d-flex align-items-center justify-content-center icon-menu-two">
             <div class="row">
                 <i class="fas fa-bus-alt"></i>
                 <span class="d-flex align-items-center title-menu">Transporte</span>
@@ -40,7 +39,7 @@
     </div>
 
     <div class="row">
-        <div (click)="stateBtn($event, 'sapu')" class="col d-flex align-items-center justify-content-center icon-menu-three">
+        <div (click)="directorio($event, 'sapu')" class="col d-flex align-items-center justify-content-center icon-menu-three">
             <div class="row">
                 <i class="fas fa-hospital-alt"></i>
                 <span class="d-flex align-items-center title-menu">Hospitales</span>
@@ -50,7 +49,7 @@
         
    
     <div class="row">
-        <div (click)="stateBtn($event, 'bolsaTrabajo')" class="col d-flex align-items-center justify-content-center icon-menu-four">
+        <div (click)="directorio($event, 'bolsaTrabajo')" class="col d-flex align-items-center justify-content-center icon-menu-four">
             <div class="row">
                 <i class="fas fa-briefcase"></i>  
                 <span class="d-flex align-items-center title-menu">Bolsa de Empleos</span>
@@ -59,7 +58,7 @@
     </div>
 
     <div class="row">
-        <div (click)="stateBtn($event, 'notaria')" class="col d-flex align-items-center justify-content-center icon-menu-five">
+        <div (click)="directorio($event, 'notaria')" class="col d-flex align-items-center justify-content-center icon-menu-five">
             <div class="row">
                 <i class="fas fa-file-alt"></i>
                 <span class="d-flex align-items-center title-menu">Notarias</span>
@@ -67,10 +66,10 @@
         </div>
     </div>
     
-    <div class="mapaHide">
-        <app-here-map></app-here-map>
-    </div>
 </nav>
+<div class="mapaHide">
+    <app-here-map></app-here-map>
+</div>
   
 
     

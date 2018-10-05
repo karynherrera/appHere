@@ -15,7 +15,8 @@ import {HereMapComponent} from '../here-map/here-map.component';
 export class MenuComponent implements OnInit {
   @ViewChild(HereMapComponent) mapaHijo:HereMapComponent;
   
- 
+  value: string;
+  
   constructor(
     private router: Router,
     public auth: AuthService,
@@ -23,6 +24,9 @@ export class MenuComponent implements OnInit {
     ) { 
         this.query="";
       };
+
+    stateMenu: Boolean = false;
+    stateMap: Boolean = false;
     userClicks : Boolean = false;
     photo: string;
     name: string;
@@ -39,15 +43,22 @@ export class MenuComponent implements OnInit {
     })
   }
 
-  public stateBtn(event, name: string){
-    console.log('hizo click '+name);
+  public stateBtn(value: string){
+    //console.log('hizo click '+name);
+    //this.mapaHijo.catchQuery(value);
     // console.log(this.queryReceptor);
     //this.map.catchQuery(name);
     //this.map.catchQuery(name);
     //this.router.navigate(['mapa']);
     }
 
-  catchQuery(value:string){
+  directorio(evento,value:string){
+    this.stateMenu = true;
+    this.stateMap = true;
+    //console.log(this.value);
+    //this.stateBtn(value);
+    //this.mapaHijo.userQuery = value;
+    //console.log('value directorio '+this.mapaHijo.userQuery);
     this.mapaHijo.catchQuery(value);
     //this.mapaHijo.places(value);
     //this.router.navigate(['mapa']);

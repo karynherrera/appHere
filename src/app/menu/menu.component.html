@@ -22,7 +22,7 @@
         </div>
     </div>
     <div class="row">
-        <div (click)="stateBtn($event, 'extranjeria')" class="col d-flex align-items-center justify-content-center icon-menu-one btn">
+        <div (click)="stateBtn($event, 'casa de cambio')" class="col d-flex align-items-center justify-content-center icon-menu-one btn">
             <div class="row">
                 <i class="fas fa-dollar-sign "></i>
                 <span class="d-flex align-items-center title-menu">Casas de Cambio</span>
@@ -53,7 +53,7 @@
         <div (click)="stateBtn($event, 'bolsaTrabajo')" class="col d-flex align-items-center justify-content-center icon-menu-four">
             <div class="row">
                 <i class="fas fa-briefcase"></i>  
-                <span class="d-flex align-items-center title-menu">Notarias</span>
+                <span class="d-flex align-items-center title-menu">Bolsa de Empleos</span>
             </div> 
         </div>
     </div>
@@ -62,13 +62,16 @@
         <div (click)="stateBtn($event, 'notaria')" class="col d-flex align-items-center justify-content-center icon-menu-five">
             <div class="row">
                 <i class="fas fa-file-alt"></i>
-                <span class="d-flex align-items-center title-menu">Bolsa de Empleos</span>
+                <span class="d-flex align-items-center title-menu">Notarias</span>
             </div>
         </div>
     </div>
+    
+    <div class="mapaHide">
+        <app-here-map></app-here-map>
+    </div>
 </nav>
   
-
 
     
    

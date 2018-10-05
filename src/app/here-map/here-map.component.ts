@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Output } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 import { HereService } from '../services/here.service';
 import { AuthService } from '../Services/auth.service';
 import { AngularFireAuth } from '@angular/fire/auth';
@@ -9,7 +9,7 @@ declare var H: any;
   styleUrls: ['./here-map.component.css']
 })
 export class HereMapComponent implements OnInit {
-  @Output()
+ 
   //@ouput() dataShared:boolean = false;
   @ViewChild('map')
   public mapElement: ElementRef;
@@ -80,10 +80,12 @@ export class HereMapComponent implements OnInit {
   }
 
   //catch query menu
-  public catchQuery(resp: string){
+  public catchQuery(value){
     //this.userQuery = resp;
-    console.log(resp);
+    console.log('holi' +value);
+    this.places(value);
     //this.places(query);
+   // return this.queryReceptor.emit(resp);
   }
 
   // Buscador
@@ -99,7 +101,7 @@ export class HereMapComponent implements OnInit {
   }
   // Marcadores
   private dropMarker(coordinates: any, data: any) {
-    const marker = new H.map.Marker(coordinates);
+    const marker = new H.map.Marker(coordinates);8
     marker.setData('<p>' + data.title + '<br>' + data.vicinity + '</p>');
     marker.addEventListener('tap', event => {
       const bubble = new H.ui.InfoBubble(event.target.getPosition(), {

@@ -13,24 +13,28 @@
     </div>
 </header>
 
-<div style="padding: 10px 0">
-    <input type="text" placeholder="Search places..." [(ngModel)]="query" />
-    <button (click)="places(query)">Search</button>
+<div class="container">
+  <div class="row">
+    <div class="col">
+        <input class="" type="text" placeholder="Search places..." [(ngModel)]="query" /> 
+        <button (click)="places(query)">Search</button>
+    </div>
   </div>
+</div>
 
-<div class="mapa" #map ></div> 
+<div class="container mapa" #map ></div> 
 
 <p>Ruta</p>
-            <div style="padding: 10px 0">
-              <div>
-                  <label style="display: inline-block; width: 60px; color: #FFF">Start</label>
-                  <input type="text" [(ngModel)]="start" />
-              </div>
-              <div>
-                  <label style="display: inline-block; width: 60px; color: #FFF">Finish</label>
-                  <input type="text" [(ngModel)]="finish" />
-              </div>
-            </div>
+    <div style="padding: 10px 0">
+      <div>
+          <label style="display: inline-block; width: 60px; color: #FFF">Start</label>
+          <input type="text" [(ngModel)]="start" />
+      </div>
+      <div>
+          <label style="display: inline-block; width: 60px; color: #FFF">Finish</label>
+          <input type="text" [(ngModel)]="finish" />
+      </div>
+    </div>
 
 <app-here-routing [start]="start" [finish]="finish" width="1080px" height="530px">
 

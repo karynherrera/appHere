@@ -1,7 +1,23 @@
-<p>helpo</p>
-    <div class="container" #map [style.width]="width" [style.height]="height" style="float: left"></div>
-<ol style="float: left; background-color: #FFF; width: 35%; min-height: 530px; margin-left: 20px; margin-top: 0">
-    <li *ngFor="let direction of directions">
-        <p class="col" [innerHTML]="direction.instruction"></p>
-    </li>
-</ol>   
+<div class="container">
+    <div class="row">
+        <div class="col d-flex justify-content-center map-route">
+            <div #map [style.width]="width" [style.height]="height"></div>
+        </div>
+    </div>
+</div>>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <span class="title-route d-flex justify-content-center">
+                INDICATIONS
+            </span>
+            <ol >
+                <li *ngFor="let direction of directions">
+                    <p class="col list-indications" [innerHTML]="direction.instruction"></p>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>    
+
+      
